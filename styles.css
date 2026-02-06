@@ -1,0 +1,316 @@
+/* Подключение шрифтов */
+@font-face {
+    font-family: 'ArtegraSansExBlack';
+    src: url('styles/ArtegraSansExBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArtegraSansExRegular';
+    src: url('styles/ArtegraSansExRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArticulatCF';
+    src: url('styles/ArticulatCF-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ArtegraSansExRegular', sans-serif;
+    background-color: #040404;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%; /* Гарантируем, что контейнер не сожмется во флекс-контейнере */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background-color: #000000;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 30px;
+    width: auto;
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'ArtegraSansExBlack', sans-serif;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-download {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'ArticulatCF', sans-serif;
+}
+
+.btn-download:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.telegram-icon {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.telegram-icon:hover {
+    filter: brightness(0.7);
+}
+
+.icon-svg {
+    height: 24px;
+    width: 24px;
+    transition: all 0.3s ease;
+}
+
+.telegram-icon:hover .icon-svg {
+    filter: brightness(0.7);
+}
+
+/* Тело */
+.main {
+    flex: 1; /* Заставляет основной блок занимать всё свободное место */
+    margin-top: 80px; /* Отступ под фиксированную шапку */
+    display: flex;
+    align-items: center; /* Центрирует контент по вертикали, пока он влезает в экран */
+    padding: 40px 0;
+}
+
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ffffff, #cccccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'ArtegraSansExBlack', sans-serif;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.btn-download-windows {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'ArticulatCF', sans-serif;
+}
+
+.btn-download-windows:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+.btn-download-windows i {
+    font-size: 20px;
+}
+
+.btn-download-windows .icon-svg {
+    height: 20px;
+    width: 20px;
+}
+
+.features-toggle {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.features-toggle a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.features-toggle a:hover {
+    border-bottom-color: #ffffff;
+}
+
+/* Выдвигающийся список функций */
+.features-list {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.features-list.active {
+    display: block;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background-color: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-item:hover {
+    border-color: #333333;
+    transform: translateY(-2px);
+}
+
+.feature-item h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-family: 'ArtegraSansExBlack', sans-serif;
+}
+
+.feature-item p {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Подвал */
+.footer {
+    background-color: #000000;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-brand {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.8;
+    font-family: "ArtegraSansExBlack";
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .btn-download-windows {
+        font-size: 14px;
+        padding: 14px 24px;
+    }
+    
+    .feature-item {
+        padding: 20px;
+    }
+    
+    .feature-item h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .btn-download {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
