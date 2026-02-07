@@ -79,7 +79,7 @@ body {
     color: #000000;
     border: none;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 16px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -154,7 +154,7 @@ body {
     color: #000000;
     border: none;
     padding: 16px 32px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -216,7 +216,7 @@ body {
 .feature-item {
     background-color: #0a0a0a;
     border: 1px solid #1a1a1a;
-    border-radius: 12px;
+    border-radius: 24px;
     padding: 24px;
     margin-bottom: 16px;
     text-align: left;
