@@ -123,10 +123,6 @@ body {
     display: flex;
     align-items: center; /* Центрирует контент по вертикали, пока он влезает в экран */
     padding: 40px;
-    background-image: url('image 35.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% auto;
 }
 
 .hero {
